@@ -8,3 +8,14 @@ class Solution:
         for i in range(len(paths)): 
             if paths[i][1] not in hashmap:
                 return paths[i][1]
+
+#-------------------------------------------
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        cityPaths = {}
+        for path in paths:
+            cityPaths[path[0]] = path[1]
+        
+        for city in cityPaths.values():
+            if city not in cityPaths:
+                return city
